@@ -3,7 +3,7 @@ import './App.css'
 import fevicon from './assets/images/fevicon.png'
 import { Nav } from './Nav'
 import { Home } from './Pages/Home'
-import { About } from './Pages/about'
+// import { About } from './Pages/about'
 import { Blogs } from './Pages/blogs'
 import { Project } from './Pages/project'
 import { Contact } from './Pages/contact'
@@ -11,6 +11,7 @@ import { RootLayouts } from './RootLayouts'
 import { Images } from './Pages/Images'
 import { Cv } from './Pages/Cv'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { About } from './Pages/About'
 
 
 
