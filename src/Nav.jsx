@@ -73,7 +73,6 @@ export const Nav = () => {
         </details>
       </li>
       <li className='text-base py-2'><Link to={"/about"} >ABOUT</Link></li>
-      {/* <li className='text-base py-2'><Link to={"/blogs"} >BLOGS</Link></li> */}
       <li className='text-base py-2'><Link to={"/projects"} >PROJECT</Link></li>
       <li className='text-base py-2'><Link to={"/contact"} >CONTACT</Link></li>
       </ul>
@@ -93,8 +92,7 @@ export const Nav = () => {
         </details>
       </li>
       <li className='text-base'><Link to={"/about"} >ABOUT</Link></li>
-      {/* <li className='text-base'><Link to={"/blogs"} >BLOGS</Link></li> */}
-      <li className='text-base'><Link to={"/projects"} >PROJECT</Link></li>
+       <li className='text-base'><Link to={"/projects"} >PROJECT</Link></li>
       <li className='text-base'><Link to={"/contact"} >CONTACT</Link></li>
     </ul>
   </div>
