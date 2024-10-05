@@ -67,8 +67,8 @@ export const Nav = () => {
         <details>
           <summary>Parent</summary>
           <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+          <li className='text-base'><Link to={'/images'} >Images</Link></li>
+          <li className='text-base'><Link to={'/resume'} >Resume/cv</Link></li>
           </ul>
         </details>
       </li>
