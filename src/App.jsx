@@ -5,12 +5,13 @@ import { Nav } from './Nav'
 import { Home } from './Pages/Home'
 import { About } from './Pages/About'
 // import { Project } from './Pages/project'
-import { Contact } from './Pages/contact'
+// import { Contact } from './Pages/contact'
 import { RootLayouts } from './RootLayouts'
 import { Images } from './Pages/Images'
 import { Cv } from './Pages/Cv'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Project } from './Pages/Project';
+import { Contact } from './Pages/Contact';
 
 
 
@@ -24,7 +25,7 @@ const router = createBrowserRouter( createRoutesFromElements(
       <Route path='/' element={<Home/>} />
       <Route path='/about' element={<About/>}/>
       <Route path='/projects' element={ <Project/>} />
-      <Route path='/contact' element={<Contact/>} />
+      <Route path='/contact' element={ < Contact/> } />
       <Route path='/images' element={<Images/>} />
       <Route path='/resume' element={<Cv/>} />
 
