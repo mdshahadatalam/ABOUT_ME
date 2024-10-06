@@ -1,8 +1,29 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLocationDot, faPhoneVolume } from '@fortawesome/free-solid-svg-icons'
+import { Formik, useFormik } from 'formik'
+import { validationSchema } from '../Validation/Validation'
 
 export const Contact = () => {
+
+
+  const initialValues = {
+    name:"",
+    email: "",
+    number:"",
+    Subject:"",
+    message:"",
+  }
+ 
+  const formik = useFormik({
+    initialValues,
+    onSubmit:console.log('submited'),
+    validationSchema:validationSchema
+    
+  })
+  console.log(formik);
+  
+  
   return (
    <>
    <section id='HearderSec' className='AboutSec h-64'>
@@ -57,39 +78,77 @@ export const Contact = () => {
         </div>
       </div>
       <div className="col-lg-8">
-        <form action="">
+        <form action="" onSubmit={formik.handleSubmit}>
 
           
        <label className="relative w-[80%] mt-3">
-           <input type="text" name="name" id="name" className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
+           <input
+            type="text"
+             name="name" 
+             id="name"
+             value={formik.values.name}
+             onChange={formik.handleChange}
+             className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                />
               <span className=" absolute top-3.5 left-5 peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300 ">
                  Your name
               </span>
        </label>
+       {
+        formik.errors.name && <div className="text-red-500">{formik.errors.name}</div>
+       }
 
        <label className="relative w-[80%] mt-3">
-           <input type="email" name="email" id="email" className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
+           <input
+            type="email"
+             name="email"
+              id="email" 
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                />
               <span className=" absolute top-3.5 left-5 peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300 ">
                  Your Email
               </span>
        </label>
 
+       {
+        formik.errors.email && <div className="text-red-500">{formik.errors.email}</div>
+       }
+
        <label className="relative w-[80%] mt-3">
-           <input type="number" name="number" id="number" className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
+           <input
+            type="number"
+             name="number"
+              id="number" 
+              value={formik.values.number}
+              onChange={formik.handleChange}
+              className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                />
               <span className=" absolute top-3.5 left-5 peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300 ">
                  Your Phone
               </span>
        </label>
+       {
+        formik.errors.number && <div className="text-red-500">{formik.errors.number}</div>
+       }
+
        <label className="relative w-[80%] mt-3">
-           <input type="text" name="Subject" id="subject" className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
+           <input 
+           type="text"
+            name="Subject"
+             id="subject"
+             value={formik.values.Subject}
+             onChange={formik.handleChange}
+              className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                />
-              <span className=" absolute top-3.5 left-5 peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300 ">
+              <span className=" absolute top-3.5 left-5 peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duratin-300 ">
                  Your Subject
               </span>
        </label>
+       {
+        formik.errors.Subject && <div className="text-red-500">{formik.errors.Subject}</div>
+       }
                 
           {/* <input className='InFrom' type="text" name="name" id="" placeholder='Your Name' />
           <input className='InFrom' type="email" name="email" id="" placeholder='Your Email' /> <br />
@@ -98,15 +157,20 @@ export const Contact = () => {
           
              <label className="relative w-[80%] mt-3 ">
                <textarea
-                 name="name"
+                 name="message"
                  id="name"
+                 value={formik.values.message}
+                 onChange={formik.handleChange}
                  className="peer border-[#e5eaf2] border rounded-md outline-none px-4 min-h-[200px] py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                        />
                     <span className=" absolute top-3.5 left-5 peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300 ">
                               Write something about here
                     </span>
                 </label>
-         
+                {
+                  formik.errors.message && <div className="text-red-500">{formik.errors.message}</div>
+                }
+          
 
           <div>
           
