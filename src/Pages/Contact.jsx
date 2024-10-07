@@ -1,31 +1,88 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLocationDot, faPhoneVolume } from '@fortawesome/free-solid-svg-icons'
 import { Formik, useFormik } from 'formik'
 import { validationSchema } from '../Validation/Validation'
+import { getAuth, createUserWithEmailAndPassword,sendEmailVerification } from "firebase/auth";
+import { ToastContainer, toast } from 'react-toastify';
+import { BeatLoader } from 'react-spinners'
+
 
 export const Contact = () => {
 
-
+  const [ loading,setLoding] = useState(false)
+  const auth = getAuth();
   const initialValues = {
     name:"",
     email: "",
-    number:"",
+    password:"",
     Subject:"",
     message:"",
   }
  
   const formik = useFormik({
     initialValues,
-    onSubmit:console.log('submited'),
+    onSubmit:()=>{
+      createdNewUser()
+    },
+    
     validationSchema:validationSchema
     
   })
-  console.log(formik);
-  
+  // console.log(formik);
+
+
+  const createdNewUser =()=>{
+    setLoding(true)
+    createUserWithEmailAndPassword(
+         auth,
+         formik.values.email,
+        formik.values.password)
+    
+  .then(() => {
+    setLoding(false)
+
+    sendEmailVerification(auth.currentUser)
+    .then(()=>{
+      toast.success('send email for verification', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        
+        });
+    })
+    // console.log('Sign up');
+    
+  })
+  .catch((error) => {
+    setLoding(false)
+   if(error.message.includes('auth/email-already-in-use')){
+    toast.error('Your email already use', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+     
+      });
+   }
+   
+    // ..
+  });
+  }
   
   return (
    <>
+
+   <ToastContainer/>
    <section id='HearderSec' className='AboutSec h-64'>
     <div className="container">
       <div className="row">
@@ -88,14 +145,12 @@ export const Contact = () => {
              id="name"
              value={formik.values.name}
              onChange={formik.handleChange}
-             className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
+             placeholder='Your Full name'
+             className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"             
                />
-              <span className=" absolute top-3.5 left-5 peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300 ">
-                 Your name
-              </span>
        </label>
        {
-        formik.errors.name && <div className="text-red-500">{formik.errors.name}</div>
+        formik.errors.name && formik.touched.name && <div className="text-red-500">{formik.errors.name}</div>
        }
 
        <label className="relative w-[80%] mt-3">
@@ -105,32 +160,31 @@ export const Contact = () => {
               id="email" 
               value={formik.values.email}
               onChange={formik.handleChange}
+              placeholder='Your email'
               className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                />
-              <span className=" absolute top-3.5 left-5 peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300 ">
-                 Your Email
-              </span>
+
        </label>
 
        {
-        formik.errors.email && <div className="text-red-500">{formik.errors.email}</div>
+        formik.errors.email && formik.touched.name && <div className="text-red-500">{formik.errors.email}</div>
        }
 
        <label className="relative w-[80%] mt-3">
            <input
-            type="number"
-             name="number"
-              id="number" 
+            type="password"
+             name="password"
+              id="password" 
+              required="Please enter your number"
               value={formik.values.number}
               onChange={formik.handleChange}
+              placeholder='Your password'
               className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                />
-              <span className=" absolute top-3.5 left-5 peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300 ">
-                 Your Phone
-              </span>
+              
        </label>
        {
-        formik.errors.number && <div className="text-red-500">{formik.errors.number}</div>
+        formik.errors.password && formik.touched.password && <div className="text-red-500">{formik.errors.password}</div>
        }
 
        <label className="relative w-[80%] mt-3">
@@ -140,14 +194,13 @@ export const Contact = () => {
              id="subject"
              value={formik.values.Subject}
              onChange={formik.handleChange}
+             placeholder='Your subject'
               className="peer border-[#e5eaf2] border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                />
-              <span className=" absolute top-3.5 left-5 peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duratin-300 ">
-                 Your Subject
-              </span>
+             
        </label>
        {
-        formik.errors.Subject && <div className="text-red-500">{formik.errors.Subject}</div>
+        formik.errors.Subject && formik.touched.name && <div className="text-red-500">{formik.errors.Subject}</div>
        }
                 
           {/* <input className='InFrom' type="text" name="name" id="" placeholder='Your Name' />
@@ -161,14 +214,13 @@ export const Contact = () => {
                  id="name"
                  value={formik.values.message}
                  onChange={formik.handleChange}
+                 placeholder='Write something about here'
                  className="peer border-[#e5eaf2] border rounded-md outline-none px-4 min-h-[200px] py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                        />
-                    <span className=" absolute top-3.5 left-5 peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300 ">
-                              Write something about here
-                    </span>
+
                 </label>
                 {
-                  formik.errors.message && <div className="text-red-500">{formik.errors.message}</div>
+                  formik.errors.message && formik.touched.name && <div className="text-red-500">{formik.errors.message}</div>
                 }
           
 
@@ -176,7 +228,9 @@ export const Contact = () => {
           
 
           
-      <button
+      <button type='submit'
+
+        disabled={loading}
            className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-primary transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
       <span
           className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-primary group-hover:h-full"></span>
@@ -191,7 +245,12 @@ export const Contact = () => {
                 xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
         </span>
-                <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">Send Me</span>
+                <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
+                  
+                  {
+                    loading ? <BeatLoader size={8}/> : 'Send Message'
+                  }
+                  </span>
       </button>
               
           </div>

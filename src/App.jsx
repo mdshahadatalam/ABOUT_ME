@@ -12,6 +12,7 @@ import { Cv } from './Pages/Cv'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Project } from './Pages/Project';
 import { Contact } from './Pages/Contact';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
