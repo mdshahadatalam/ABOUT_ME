@@ -25,7 +25,7 @@ export const Cv = () => {
       className="absolute w-0 h-0 transition-all duration-500 ease-out bg-primary rounded-full group-hover:w-56 group-hover:h-56"></span>
   <span
       className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-300"></span>
-  <span className="relative text-text group-hover:text-white">Download Cv</span>
+  <span className="relative text-text group-hover:text-white"> <a href="https://docs.google.com/document/d/1A75GwszbWGifLIC000LBFN5zf9H8qK8n5ovsdOkgBkU/edit?usp=sharing">Download Cv</a> </span>
 </button>
               
    </div>

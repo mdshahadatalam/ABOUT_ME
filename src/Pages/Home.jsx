@@ -1,14 +1,20 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import my from '../assets/images/my.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle, faGamepad, faLaptopCode, faPen, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faFigma, faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import Lottie from "lottie-react";
 import whatapp from '../assets/images/whatapp.jpg'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 
 
 export const Home = () => {
+
+  useEffect( ()=>{
+    Aos.init();
+  })
    
  const showMy = useRef();
  const open = (e)=>{
@@ -52,11 +58,11 @@ export const Home = () => {
       <div className="container">
         <div className="row justify-center align-items-center">
           <div className="col-lg-6 fisrtHeader">
-            <h1 className='text-4xl cursor-pointer headSc'>👋Hi I'am <span className='font-serif'>Front-End</span> Developer</h1>
-            <p className='py-4 font-mono text-justify cursor-pointer'>Iam a <b className='font-serif pro'> Professinal Front-End Developer.</b> This website Contains Design Works that I have Produced ove the past few years.Finavaricus types of design projects suchasiogo design brochure designs.product designs. website design and manymore</p>
+            <h1 className='text-4xl cursor-pointer headSc' data-aos="zoom-in" data-aos-duration="1500">👋Hi I'am <span className='font-serif'>Front-End</span> Developer</h1>
+            <p className='py-4 font-mono text-justify cursor-pointer' data-aos="zoom-in" data-aos-duration="1500">Iam a <b className='font-serif pro'> Professinal Front-End Developer.</b> This website Contains Design Works that I have Produced ove the past few years.Finavaricus types of design projects suchasiogo design brochure designs.product designs. website design and manymore</p>
           </div>
           <div className="col-lg-6 justify-center align-items-center d-flex ">
-            <img className='img-fluid h-96 myImg shadow-md rounded-md cursor-pointer' onClick={open} src={my} alt="" />
+            <img className='img-fluid h-96 myImg shadow-md rounded-md cursor-pointer' data-aos="zoom-out" data-aos-duration="1500" onClick={open} src={my} alt="" />
           </div>
         </div>
 
@@ -81,24 +87,25 @@ export const Home = () => {
    
     <section className='py-10 bg-[#c1baba] '>
       <div className="container">
-        <h2 className='text-4xl font-bold text-center pb-5'>What I Do ?</h2>
+        <h2 className='text-4xl font-bold text-center pb-5' data-aos="fade-up-right" data-aos-duration="1500">What I Do ?</h2>
         <div className="row">
           <div className="col-lg-4 pt-2">
-            <div className='Box px-6 shadow-md'>
+            <div className='Box px-6 shadow-lg rounded bg-white text-black ' data-aos="fade-right" data-aos-duration="1000">
               <span className='text-2xl pt-2 pb-4 d-inline-block'><FontAwesomeIcon icon={faLaptopCode} /></span>
               <h3 className='font-serif font-bold text-1xl'>UX/UI Design</h3>
               <p className='text-justify py-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt obcaecati veritatis at amet mollitia nisi eos vitae eveniet expedita totam.</p>
             </div>
           </div>
           <div className="col-lg-4 pt-2">
-          <div className='Box px-6 shadow-md'>
+          <div className='Box px-6 shadow-lg bg-white text-black rounded ' data-aos="zoom-in" data-aos-duration="1000">
               <span className='text-2xl pt-2 pb-4 d-inline-block'><FontAwesomeIcon icon={faGamepad} /></span>
               <h3 className='font-serif font-bold text-1xl'>Visual Gaming</h3>
               <p className='text-justify py-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt obcaecati veritatis at amet mollitia nisi eos vitae eveniet expedita totam.</p>
             </div>
           </div>
           <div className="col-lg-4 pt-2">
-          <div className='Box px-6 shadow-md'>
+          <div className='Box px-6 shadow-lg bg-white text-black rounded '  data-aos="fade-up"
+                  data-aos-anchor-placement="center-bottom" data-aos-duration="1000">
               <span className='text-2xl pt-2 pb-4 d-inline-block'><FontAwesomeIcon icon={faFigma} /></span>
               <h3 className='font-serif font-bold text-1xl'>Figma</h3>
               <p className='text-justify py-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt obcaecati veritatis at amet mollitia nisi eos vitae eveniet expedita totam.</p>

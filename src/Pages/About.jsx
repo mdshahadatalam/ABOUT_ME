@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle, faGamepad, faLaptopCode, faSchool, faXmark } from '@fortawesome/free-solid-svg-icons'
 import whatapp from '../assets/images/whatapp.jpg'
@@ -14,9 +14,16 @@ import high from '../assets/images/education/h.png.png'
 import cmt  from '../assets/images/education/cm.png.png'
 import com from '../assets/images/education/c.png.png'
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 
 
 export const About = () => {
+
+  useEffect( ()=>{
+    Aos.init();
+  })
 
 
   const BigImg = useRef()
@@ -109,18 +116,23 @@ export const About = () => {
 <section  className='bg-[#c5bfbf] text-black py-5'>
  <div className="container">
    <ul className='align-items-center'> 
-     <li className='py-4 font-serif text-end'> <span className='dot'><FontAwesomeIcon icon={faCircle} /></span> GE IN TOUCH WITH ME</li>
+     <li className='py-4 font-serif text-end' data-aos="fade-right" data-aos-duration="1000"> <span className='dot'><FontAwesomeIcon icon={faCircle} /></span> GE IN TOUCH WITH ME</li>
      </ul>
    <div className="row justify-center align-items-center">
      <div className="col-lg-6 d-flex justify-center">
-       <img onClick={ImgBigClick} className='h-96 shadow-md rounded-md img-fluid' src={whatapp} alt="" />
+       <img onClick={ImgBigClick} className='h-96 shadow-md rounded-md img-fluid' data-aos="zoom-in" data-aos-duration="1000" src={whatapp} alt="" />
      </div>
      <div className="col-lg-6">
-      <p className='text-justify font-serif py-3 cursor-pointer'>I am very interested & passionate about everything related to digital & web design.Over 1 years of experience in the design industry I have worked a lot with agencies and passionate people who want to solve problems through beautiful design.</p>
+      <p className='text-justify font-serif py-3 cursor-pointer'
+       data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1000">I am very interested & passionate about everything related to digital & web design.Over 1 years of experience in the design industry I have worked a lot with agencies and passionate people who want to solve problems through beautiful design.</p>
 
       <hr />
 
-      <div className='d-flex justify-between py-2'>
+      <div className='d-flex justify-between py-2'
+       data-aos="fade-up"
+     data-aos-duration="2000">
              <div>
                   <h3 className='font-serif text-xl font-bold'>30+</h3>
                   <p className='font-serif'>Projects</p>
@@ -140,10 +152,13 @@ export const About = () => {
 {/* skills section */}
 
 <section className='py-14'>
-  <div className="container">
-  <h1 className='text-3xl font-serif text-center py-3 skillImg '>Skills</h1>
+  <div className="container cursor-pointer ">
+  <h1 className='text-3xl font-serif text-center py-3' data-aos="zoom-in">Skills</h1>
     <div className="row justify-center align-items-center">
-      <div className="col-lg-2 shadow-md rounded-md ">
+      <div className="col-lg-2 shadow-md rounded-md"
+       data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
 
         <div className='text-center justify-center d-flex '>
           <img  className='img-fluid w-14 shadow-md rounded-md py-2 skillImg' src={html} alt="" />
@@ -151,34 +166,46 @@ export const About = () => {
         <h3  className='text-center py-2 font-serif skillImg'>HTML5</h3>
       </div>
 
-      <div className="col-lg-2 shadow-md rounded-md ">
+      <div className="col-lg-2 shadow-md rounded-md "
+       data-aos="fade-up"
+     data-aos-duration="2000">
         <div className=' justify-center d-flex'>
         <img className='img-fluid w-14 shadow-md rounded-md py-2 skillImg' src={css} alt="" />
         </div>
         <h3 className='text-center py-2 font-serif skillImg'>CSS3</h3>
       </div>
-      <div className="col-lg-2 shadow-md rounded-md ">
+      <div className="col-lg-2 shadow-md rounded-md " 
+       data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
         <div className='justify-center d-flex'>
         <img className='img-fluid w-14 shadow-md rounded-md py-[12px] skillImg' src={tailcss} alt="" />
         </div>
         <h3 className='text-center py-2 font-serif skillImg'> TAILWIND CSS</h3>
 
       </div>
-      <div className="col-lg-2 shadow-md rounded-md ">
+      <div className="col-lg-2 shadow-md rounded-md "
+      data-aos="fade-up"
+      data-aos-duration="2000">
         <div className='justify-center d-flex'>
         <img className='img-fluid w-14 shadow-md rounded-md py-2 skillImg' src={boot} alt="" />
         </div>
         <h3 className='text-center py-3 font-serif skillImg'> BOOTSTRAP</h3>
 
       </div>
-      <div className="col-lg-2 shadow-md rounded-md ">
+      <div className="col-lg-2 shadow-md rounded-md "
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500">
        <div className='justify-center d-flex'>
        <img  className='img-fluid w-14 shadow-md rounded-md py-[10px] skillImg'src={js} alt="" />
        </div>
         <h3 className='text-center py-2 font-serif skillImg'>JAVASCRIPT</h3>
 
       </div>
-      <div className="col-lg-2 shadow-md rounded-md ">
+      <div className="col-lg-2 shadow-md rounded-md " 
+      data-aos="fade-up"
+      data-aos-duration="2000">
         <div className='justify-center d-flex'>
         <img className='img-fluid w-14 shadow-md rounded-md py-2 skillImg' src={react} alt="" />
         </div>
@@ -193,9 +220,9 @@ export const About = () => {
 
 <section className='py-12'>
   <div className="container">
-    <h1 className='text-2xl font-serif text-center'>Skills Rang</h1>
+    <h1 className='text-2xl font-serif text-center' data-aos="zoom-in">Skills Rang</h1>
     <div className="row">
-      <div className="col-12 col-sm-6 col-md-4 col-lg-4 py-2">
+      <div className="col-12 col-sm-6 col-md-4 col-lg-4 py-2"  data-aos="zoom-in" data-aos-duration="1000">
         <div>
           <h4 className='text-md font-serif'>HTML5</h4>
           <div className="progress">
@@ -212,7 +239,7 @@ export const About = () => {
           </div>
         </div>
       </div>
-      <div className="col-12 col-sm-6 col-md-4 col-lg-4 py-2">
+      <div className="col-12 col-sm-6 col-md-4 col-lg-4 py-2"  data-aos="zoom-in" data-aos-duration="1000">
         <div>
           <h4 className='text-md font-serif'>CSS3</h4>
           <div className="progress">
@@ -229,7 +256,7 @@ export const About = () => {
           </div>
         </div>
       </div>
-      <div className="col-12 col-sm-6 col-md-4 col-lg-4 py-2">
+      <div className="col-12 col-sm-6 col-md-4 col-lg-4 py-2"  data-aos="zoom-in" data-aos-duration="1000">
         <div>
           <h4 className='text-md font-serif'>TAILWIND CSS</h4>
           <div className="progress">
@@ -249,8 +276,8 @@ export const About = () => {
     </div>
  
 
-    <div className="row pt-5 pb-5">
-      <div className="col-12 col-sm-6 col-md-4 col-lg-4 py-2">
+    <div className="row pt-2 pb-2">
+      <div className="col-12 col-sm-6 col-md-4 col-lg-4 py-2"  data-aos="zoom-in" data-aos-duration="1000">
         <div>
           <h4 className='text-md font-serif'>BOOTSTRAP</h4>
           <div className="progress">
@@ -267,7 +294,7 @@ export const About = () => {
           </div>
         </div>
       </div>
-      <div className="col-12 col-sm-6 col-md-4 col-lg-4 py-2">
+      <div className="col-12 col-sm-6 col-md-4 col-lg-4 py-2"  data-aos="zoom-in" data-aos-duration="1000">
         <div>
           <h4 className='text-md font-serif'>JAVASCRIPT</h4>
           <div className="progress">
@@ -284,7 +311,7 @@ export const About = () => {
           </div>
         </div>
       </div>
-      <div className="col-12 col-sm-6 col-md-4 col-lg-4 py-2">
+      <div className="col-12 col-sm-6 col-md-4 col-lg-4 py-2"  data-aos="zoom-in" data-aos-duration="1000">
         <div>
           <h4 className='text-md font-serif'>REACT.JS</h4>
           <div className="progress">
@@ -310,9 +337,9 @@ export const About = () => {
  {/* EducationDetails-Offline */}
  <section className='py-8 pb-20 bg-[#eaedef] '>
   <div className="container">
-    <h2 className='text-3xl text-center font-serif py-5'>Education Statues</h2>
+    <h2 className='text-3xl text-center font-serif py-5' data-aos="zoom-in"  data-aos-duration="1500" >Education Statues</h2>
     <div className="row justify-center align-items-center">
-      <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-aos="fade-right" data-aos-duration="1500">
 
         <a href=" https://locator.eduportalbd.com/institutes/?ins=104477">     
         <div className='education  rounded-md shadow-md  bg-[#cdd5df]'>
@@ -326,7 +353,7 @@ export const About = () => {
         </a>
 
       </div>
-      <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-aos="fade-up" data-aos-duration="1500">
 
         <a href="https://chattogram.polytech.gov.bd/">
         <div className='education  rounded-md shadow-md bg-[#cdd5df]'>
@@ -338,7 +365,7 @@ export const About = () => {
         </a>
 
       </div>
-      <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-aos="fade-left" data-aos-duration="1500">
 
         <a href="https://chattogram.polytech.gov.bd/site/page/5ff5ce47-e0f8-4019-89c6-6f2b5e598e8d/-">
         <div  className='education   rounded-md shadow-md  bg-[#cdd5df] '>

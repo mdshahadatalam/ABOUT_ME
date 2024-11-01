@@ -1,11 +1,18 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobe, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import laptop from '../assets/images/laptop.jpg'
 import scan from '../assets/images/scan.jpg'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 export const Footer = () => {
+
+    useEffect( ()=>{
+        Aos.init();
+      })
+    
 
  const ShowScan = useRef();
 
@@ -67,7 +74,7 @@ export const Footer = () => {
                       <p className='socialText text-[#808080] '><a href="https://www.instagram.com/____md_shahadat_alam____?igsh=MXZleWQ2M3NjY3ZuYQ==">Instagram</a></p>
                     </div>
                     <div className="col-lg-6 d-flex justify-center">
-                        <img className='h-64 img-fluid' src={laptop} alt="laptop images" />
+                        <img className='h-64 img-fluid' data-aos="flip-up"   data-aos-duration="1500"  src={laptop} alt="laptop images" />
                     </div>
                 </div>
                 <hr />
