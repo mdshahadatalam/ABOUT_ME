@@ -53,7 +53,7 @@ export const Nav = () => {
       
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-slate-200 rounded-md w-48" ref={smallNav}>
+        className="menu menu-sm dropdown-content bg-black text-white rounded-md w-48" ref={smallNav}>
 
 
       {/* <span className='IconsX'><FontAwesomeIcon icon={faXmark}/></span> */}
@@ -65,7 +65,7 @@ export const Nav = () => {
        <li><Link to={"/"} >HOME</Link  ></li>
       <li>
         <details>
-          <summary>Parent</summary>
+          <summary>Explore</summary>
           <ul className="p-2">
           <li className='text-base'><Link to={'/images'} >Images</Link></li>
           <li className='text-base'><Link to={'/resume'} >Resume/cv</Link></li>

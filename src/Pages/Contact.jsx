@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLocationDot, faPhoneVolume } from '@fortawesome/free-solid-svg-icons'
 import { Formik, useFormik } from 'formik'
@@ -7,8 +7,13 @@ import { getAuth, createUserWithEmailAndPassword,sendEmailVerification } from "f
 import { ToastContainer, toast } from 'react-toastify';
 import { BeatLoader } from 'react-spinners'
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 export const Contact = () => {
+  useEffect( ()=>{
+    Aos.init();
+  })
 
   const [ loading,setLoding] = useState(false)
   const auth = getAuth();
@@ -105,7 +110,10 @@ export const Contact = () => {
       <div className="col-lg-4">
         <div className="row cursor-pointer">
           <div className="row-lg-4">
-            <div className='d-flex align-items-center pt-4'>
+            <div className='d-flex align-items-center pt-4' 
+             data-aos="fade-down"
+             data-aos-easing="linear"
+            data-aos-duration="1000" >
               <span className='contactIcon'><FontAwesomeIcon icon={faLocationDot} /></span>
               <div className='ps-2'>
                 <h3 className='text-3xl font-serif'>Address</h3>
@@ -114,7 +122,9 @@ export const Contact = () => {
             </div>
           </div>
           <div className="row-lg-4">
-            <div className='d-flex align-items-center pt-4'>
+            <div className='d-flex align-items-center pt-4'
+             data-aos="zoom-in"
+            data-aos-duration="1000">
             <span className='contactEmail'><FontAwesomeIcon icon={faEnvelope} /></span>
             <div className='ps-2'>
                 <h3 className='text-3xl font-serif'>Email</h3>
@@ -123,7 +133,9 @@ export const Contact = () => {
             </div>
           </div>
           <div className="row-lg-4">
-            <div className='d-flex align-items-center pt-4'>
+            <div className='d-flex align-items-center pt-4' 
+            data-aos="fade-up"
+            data-aos-duration="2000">
             <span className='contactPhone'><FontAwesomeIcon icon={faPhoneVolume} /></span>
 
             <div className='ps-2'>

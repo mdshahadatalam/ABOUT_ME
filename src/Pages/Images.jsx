@@ -217,14 +217,11 @@ export const Images = () => {
         className="row-span-2 col-span-2 w-full h-full object-cover"
       />
       <img
-      onClick={whatapp8My2}
         src={whatapp8}
         alt=""
         className="w-full h-full object-cover col-span-1"
       />
       <img
-      onClick={ whatapp7MyPic}
-
         src={whatapp7}
         alt=""
         className="w-full h-full object-cover col-span-1"

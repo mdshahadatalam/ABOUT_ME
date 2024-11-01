@@ -78,19 +78,27 @@ export const About = () => {
     <div className="container">
       <div className="row">
         <div className="col-lg-5 d-flex justify-center">
-         <img  className='img-fluid h-96 myImg shadow-md rounded-md cursor-pointer' onClick={open}  src={my} alt="" />
+         <img  className='img-fluid h-96 myImg shadow-md rounded-md cursor-pointer'
+          data-aos="zoom-in"
+         data-aos-duration="1000" onClick={open}  src={my} alt="" />
         </div>
         <div className="col-lg-7">
-          <p className='text-xl font-serif text-[#808080] text-justify pt-2' >I’m a  UI/UXX Designer and Developer. I strives to build immersive and beautiful web applications through carefully crafted code and user-centric design.</p>
+          <p className='text-xl font-serif text-[#808080] text-justify pt-2'
+          data-aos="fade-down"
+           data-aos-easing="linear"
+           data-aos-duration="1000" >I’m a  UI/UXX Designer and Developer. I strives to build immersive and beautiful web applications through carefully crafted code and user-centric design.</p>
       
           <div className="row pt-5">
-            <div className="col-lg-6">
+            <div className="col-lg-6" data-aos="fade-up"
+             data-aos-duration="2000">
              <p className='text-xl font-serif text-[#808080] py-2 '>Name : <span className='text-black'>Md Shahadat Alam</span> </p>
              <p className='text-xl font-serif text-[#808080] py-2 '>Experience : <span className='text-black'>1 Years</span></p> 
              <p className='text-xl font-serif text-[#808080] py-2 '>Phone : <span className='text-black'>01323630337</span></p> 
              
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6"
+            data-aos="fade-up"
+           data-aos-duration="2000">
             <p className='text-xl font-serif text-[#808080] py-2 '>Langages : <span className='text-black'>English,Hindi</span> </p> 
             <p className='text-xl font-serif text-[#808080] py-2 '>Email : <span className='text-black'>mdshahadatalam25@gmail.com</span></p> 
             
@@ -120,7 +128,10 @@ export const About = () => {
      </ul>
    <div className="row justify-center align-items-center">
      <div className="col-lg-6 d-flex justify-center">
-       <img onClick={ImgBigClick} className='h-96 shadow-md rounded-md img-fluid' data-aos="zoom-in" data-aos-duration="1000" src={whatapp} alt="" />
+       <img onClick={ImgBigClick} className='h-96 shadow-md rounded-md img-fluid'
+        data-aos="zoom-in"
+         data-aos-duration="1000"
+          src={whatapp} alt="" />
      </div>
      <div className="col-lg-6">
       <p className='text-justify font-serif py-3 cursor-pointer'

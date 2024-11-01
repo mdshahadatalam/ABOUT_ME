@@ -58,7 +58,7 @@ export const Home = () => {
       <div className="container">
         <div className="row justify-center align-items-center">
           <div className="col-lg-6 fisrtHeader">
-            <h1 className='text-4xl cursor-pointer headSc' data-aos="zoom-in" data-aos-duration="1500">👋Hi I'am <span className='font-serif'>Front-End</span> Developer</h1>
+            <h1 className='text-4xl cursor-pointer headSc' data-aos="zoom-in" data-aos-duration="1500">Hi I'am <span className='font-serif'>Front-End</span> Developer</h1>
             <p className='py-4 font-mono text-justify cursor-pointer' data-aos="zoom-in" data-aos-duration="1500">Iam a <b className='font-serif pro'> Professinal Front-End Developer.</b> This website Contains Design Works that I have Produced ove the past few years.Finavaricus types of design projects suchasiogo design brochure designs.product designs. website design and manymore</p>
           </div>
           <div className="col-lg-6 justify-center align-items-center d-flex ">
@@ -97,7 +97,7 @@ export const Home = () => {
             </div>
           </div>
           <div className="col-lg-4 pt-2">
-          <div className='Box px-6 shadow-lg bg-white text-black rounded ' data-aos="zoom-in" data-aos-duration="1000">
+          <div className='Box px-6 shadow-lg bg-white text-black rounded ' data-aos="zoom-in" data-aos-duration="1500">
               <span className='text-2xl pt-2 pb-4 d-inline-block'><FontAwesomeIcon icon={faGamepad} /></span>
               <h3 className='font-serif font-bold text-1xl'>Visual Gaming</h3>
               <p className='text-justify py-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt obcaecati veritatis at amet mollitia nisi eos vitae eveniet expedita totam.</p>
@@ -105,7 +105,7 @@ export const Home = () => {
           </div>
           <div className="col-lg-4 pt-2">
           <div className='Box px-6 shadow-lg bg-white text-black rounded '  data-aos="fade-up"
-                  data-aos-anchor-placement="center-bottom" data-aos-duration="1000">
+                  data-aos-anchor-placement="center-bottom" data-aos-duration="1500">
               <span className='text-2xl pt-2 pb-4 d-inline-block'><FontAwesomeIcon icon={faFigma} /></span>
               <h3 className='font-serif font-bold text-1xl'>Figma</h3>
               <p className='text-justify py-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt obcaecati veritatis at amet mollitia nisi eos vitae eveniet expedita totam.</p>
