@@ -93,14 +93,14 @@ export const About = () => {
              data-aos-duration="2000">
              <p className='text-xl font-serif text-[#808080] py-2 '>Name : <span className='text-black'>Md Shahadat Alam</span> </p>
              <p className='text-xl font-serif text-[#808080] py-2 '>Experience : <span className='text-black'>1 Years</span></p> 
-             <p className='text-xl font-serif text-[#808080] py-2 '>Phone : <span className='text-black'>01323630337</span></p> 
+             <p className='text-xl font-serif text-[#808080] py-2 '>Phone : <span className='text-black'> <a href="tel:01323630337">01323630337</a></span></p> 
              
             </div>
             <div className="col-lg-6"
             data-aos="fade-up"
            data-aos-duration="2000">
             <p className='text-xl font-serif text-[#808080] py-2 '>Langages : <span className='text-black'>English,Hindi</span> </p> 
-            <p className='text-xl font-serif text-[#808080] py-2 '>Email : <span className='text-black'>mdshahadatalam25@gmail.com</span></p> 
+            <p className='text-xl font-serif text-[#808080] py-2 '>Email : <span className='text-black'> <a href="mailto:mdshahadatalam25@gmail.com ">mdshahadatalam25@gmail.com </a> </span></p> 
             
             </div>
           </div>
