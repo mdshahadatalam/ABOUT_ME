@@ -128,7 +128,7 @@ export const Contact = () => {
             <span className='contactEmail'><FontAwesomeIcon icon={faEnvelope} /></span>
             <div className='ps-2'>
                 <h3 className='text-3xl font-serif'>Email</h3>
-                <p className=' font-serif text-[#595858] '>mdshahadatalam25@gmail.com</p>
+                <p className=' font-serif text-[#595858] '> <a href="mailto:mdshahadatalam25@gmail.com"> mdshahadatalam25@gmail.com</a> </p>
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@ export const Contact = () => {
 
             <div className='ps-2'>
                 <h3 className='text-3xl font-serif'>Phone</h3>
-                <p className=' font-serif text-[#595858] '>01323630337</p>
+                <p className=' font-serif text-[#595858] '> <a href="tel:01323630337">01323630337</a> </p>
               </div>
             </div>
           </div>
