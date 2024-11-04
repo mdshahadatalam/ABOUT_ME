@@ -124,7 +124,7 @@ export const About = () => {
 <section  className='bg-[#c5bfbf] text-black py-5'>
  <div className="container">
    <ul className='align-items-center'> 
-     <li className='py-4 font-serif text-end' data-aos="fade-right" data-aos-duration="1000"> <span className='dot'><FontAwesomeIcon icon={faCircle} /></span> GE IN TOUCH WITH ME</li>
+     <li className='py-4 font-serif text-end' data-aos="fade-right" data-aos-duration="1000" > <span className='dot'><FontAwesomeIcon icon={faCircle} /></span> GE IN TOUCH WITH ME</li>
      </ul>
    <div className="row justify-center align-items-center">
      <div className="col-lg-6 d-flex justify-center">
@@ -376,7 +376,10 @@ export const About = () => {
         </a>
 
       </div>
-      <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-aos="fade-left" data-aos-duration="1500">
+      <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12"
+       data-aos="fade-down"
+       data-aos-duration="1500"
+       >
 
         <a href="https://chattogram.polytech.gov.bd/site/page/5ff5ce47-e0f8-4019-89c6-6f2b5e598e8d/-">
         <div  className='education   rounded-md shadow-md  bg-[#cdd5df] '>
