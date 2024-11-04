@@ -33,7 +33,7 @@ export const Nav = () => {
    
  return (
     <>  
- <div ref={navb}  className="navbar  bg-[#dce1e7] font-mono justify-center align-items-center ">
+ <div ref={navb}  className="navbar  shadow-lg bg-[#dce1e7] font-mono justify-center align-items-center ">
        <div className="navbar-start">
     <div className="dropdown">
       <div  tabIndex={0} role="button" onClick={ShowClick} className="btn btn-ghost lg:hidden">

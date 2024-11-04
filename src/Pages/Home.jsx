@@ -8,6 +8,8 @@ import whatapp from '../assets/images/whatapp.jpg'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 
+import { MdAttachEmail } from "react-icons/md";
+
 
 
 export const Home = () => {
@@ -59,7 +61,7 @@ export const Home = () => {
         <div className="row justify-center align-items-center">
           <div className="col-lg-6 fisrtHeader">
             <h1 className='text-4xl cursor-pointer headSc' data-aos="zoom-in" data-aos-duration="1500">Hi I'am <span className='font-serif'>Front-End</span> Developer</h1>
-            <p className='py-4 font-mono text-justify cursor-pointer' data-aos="zoom-in" data-aos-duration="1500">Iam a <b className='font-serif pro'> Professinal Front-End Developer.</b> This website Contains Design Works that I have Produced ove the past few years.Finavaricus types of design projects suchasiogo design brochure designs.product designs. website design and manymore</p>
+            <p className='py-4 font-serif text-justify cursor-pointer' data-aos="zoom-in" data-aos-duration="1500">Iam a <b className='font-serif pro'> Professinal Front-End Developer.</b> This website Contains Design Works that I have Produced ove the past few years.Finavaricus types of design projects suchasiogo design brochure designs.product designs. website design and manymore</p>
           </div>
           <div className="col-lg-6 justify-center align-items-center d-flex ">
             <img className='img-fluid h-96 myImg shadow-md rounded-md cursor-pointer' data-aos="zoom-out" data-aos-duration="1500" onClick={open} src={my} alt="" />
@@ -93,14 +95,14 @@ export const Home = () => {
             <div className='Box px-6 shadow-lg rounded bg-white text-black ' data-aos="fade-right" data-aos-duration="1000">
               <span className='text-2xl pt-2 pb-4 d-inline-block'><FontAwesomeIcon icon={faLaptopCode} /></span>
               <h3 className='font-serif font-bold text-1xl'>UX/UI Design</h3>
-              <p className='text-justify py-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt obcaecati veritatis at amet mollitia nisi eos vitae eveniet expedita totam.</p>
+              <p className='text-justify py-2 font-serif'>Front End Developer • I make web pages come alive • Expertise: HTML, CSS, Tailwind CSS, Bootstrap 5, JavaScript, React.js, Firebase• Formerly with IBM</p>
             </div>
           </div>
           <div className="col-lg-4 pt-2">
           <div className='Box px-6 shadow-lg bg-white text-black rounded ' data-aos="zoom-in" data-aos-duration="1500">
-              <span className='text-2xl pt-2 pb-4 d-inline-block'><FontAwesomeIcon icon={faGamepad} /></span>
-              <h3 className='font-serif font-bold text-1xl'>Visual Gaming</h3>
-              <p className='text-justify py-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt obcaecati veritatis at amet mollitia nisi eos vitae eveniet expedita totam.</p>
+              <span className='text-3xl pt-2 pb-4 d-inline-block'><MdAttachEmail /></span>
+              <h3 className='font-serif font-bold text-1xl'>Email signature</h3>
+              <p className='text-justify py-2 font-serif'>Are you looking for the best ways to get noticed in overloaded inboxes? Get inspired by professional email signatures you can use right away. Learn more about Apple Mail email signatures.</p>
             </div>
           </div>
           <div className="col-lg-4 pt-2">
@@ -108,7 +110,7 @@ export const Home = () => {
                   data-aos-anchor-placement="center-bottom" data-aos-duration="1500">
               <span className='text-2xl pt-2 pb-4 d-inline-block'><FontAwesomeIcon icon={faFigma} /></span>
               <h3 className='font-serif font-bold text-1xl'>Figma</h3>
-              <p className='text-justify py-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt obcaecati veritatis at amet mollitia nisi eos vitae eveniet expedita totam.</p>
+              <p className='text-justify py-2 font-serif '>have been working with figma for a long time. From designing figma to building websites with figma. Can design any type of figma.I use figma properly</p>
             </div>
           </div>
         </div>
