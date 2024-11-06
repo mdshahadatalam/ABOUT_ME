@@ -79,7 +79,7 @@ export const Home = () => {
           <div className="col-lg-4 pt-2">
             <div className='Box px-6 shadow-lg rounded bg-white text-black ' data-aos="fade-right" data-aos-duration="1000">
               <span className='text-2xl pt-2 pb-4 d-inline-block'><FontAwesomeIcon icon={faLaptopCode} /></span>
-              <h3 className='font-serif font-bold text-1xl'>UX/UI Design</h3>
+              <h3 className='font-serif font-bold text-1xl'>Web Design</h3>
               <p className='text-justify py-2 font-serif'>Front End Developer • I make web pages come alive • Expertise: HTML, CSS, Tailwind CSS, Bootstrap 5, JavaScript, React.js, Firebase• Formerly with IBM</p>
             </div>
           </div>
