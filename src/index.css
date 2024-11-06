@@ -21,21 +21,6 @@
     transform: translateY(0%);
    }
 }
-
- ul li a::before{
-  content: " ";
-  position: absolute;
-  width:0%;
-  background-color: #353535;
-  height: 2px;
-  left: 0;
-  bottom: 1px;
-  transition: 0.3s;
-
-}
- ul li a:hover::before{
-width: 100%;
-}
 @media (max-width: 1063.98px) { 
    .celcleImg{
       /* visibility: hidden;

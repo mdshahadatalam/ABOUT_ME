@@ -9,6 +9,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 
 import { MdAttachEmail } from "react-icons/md";
+import { Link } from 'react-router-dom'
 
 
 
@@ -18,15 +19,8 @@ export const Home = () => {
     Aos.init();
   })
    
- const showMy = useRef();
- const open = (e)=>{
-  showMy.current.classList.add('active')
- }
 
- const DeletSec = ()=>{
-  showMy.current.classList.remove('active')
- }
-
+ 
 
 
  const BigImg = useRef()
@@ -44,15 +38,6 @@ export const Home = () => {
     <>
 
     {/* header-section  */}
-
-
-   
-    <aside ref={showMy}  className="container">
-      <div className='possi'>
-      <button onClick={DeletSec} className='IconsY'><FontAwesomeIcon icon={faXmark}/></button>
-      </div>
-      <img onClick={open} className='h-96 cursor-pointer' src= {my} alt="images" />
-    </aside>
    
 
 
@@ -64,7 +49,7 @@ export const Home = () => {
             <p className='py-4 font-serif text-justify cursor-pointer' data-aos="zoom-in" data-aos-duration="1500">Iam a <b className='font-serif pro'> Professinal Front-End Developer.</b> This website Contains Design Works that I have Produced ove the past few years.Finavaricus types of design projects suchasiogo design brochure designs.product designs. website design and manymore</p>
           </div>
           <div className="col-lg-6 justify-center align-items-center d-flex ">
-            <img className='img-fluid h-96 myImg shadow-md rounded-md cursor-pointer' data-aos="zoom-out" data-aos-duration="1500" onClick={open} src={my} alt="" />
+            <Link to={'/images'}> <img className='img-fluid h-96 myImg shadow-md rounded-md cursor-pointer' data-aos="zoom-out" data-aos-duration="1500" src={my} alt="" /></Link>
           </div>
         </div>
 

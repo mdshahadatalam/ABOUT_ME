@@ -16,6 +16,7 @@ import com from '../assets/images/education/c.png.png'
 
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import { Link } from 'react-router-dom'
 
 
 
@@ -42,9 +43,6 @@ export const About = () => {
   showMy.current.classList.add('active')
  }
 
- const DeletSec = ()=>{
-  showMy.current.classList.remove('active')
- }
 
 
   return (
@@ -66,21 +64,15 @@ export const About = () => {
 
 
 
-   <aside ref={showMy}  className="container">
-      <div className='possi'>
-      <button onClick={DeletSec} className='IconsY'><FontAwesomeIcon icon={faXmark}/></button>
-      </div>
-      <img onClick={open} className='h-96 cursor-pointer' src= {my} alt="images" />
-    </aside>
-
   {/* personalInformation  */}
   <section className='py-5 bg-[#e3dad7] '>
     <div className="container">
       <div className="row">
         <div className="col-lg-5 d-flex justify-center">
+         <Link to={'/images'}>
          <img  className='img-fluid h-96 myImg shadow-md rounded-md cursor-pointer'
           data-aos="zoom-in"
-         data-aos-duration="1000" onClick={open}  src={my} alt="" />
+         data-aos-duration="1000" onClick={open}  src={my} alt="" /></Link>
         </div>
         <div className="col-lg-7">
           <p className='text-xl font-serif text-[#808080] text-justify pt-2'
