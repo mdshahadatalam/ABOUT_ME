@@ -184,15 +184,15 @@ export const Nav = () => {
     <ul className="navbar-nav m-auto mb-2 mb-lg-0">
 
 <NavLink to={'/'}  className={`${location.pathname == '/' ? "text-danger" : ""} edit`} >
-<li className="nav-item">
-    <a className="nav-link text-xl font-serif" href="#">Home</a>
+<li data-bs-dismiss="offcanvas" className="nav-item">
+    <a  className="nav-link text-xl font-serif" href="#">Home</a>
   </li>
 </NavLink>
 
 
 
   <NavLink to={'/about'}  className={`${location.pathname == '/about' ? "text-danger" : ""} edit`} >
-<li className="nav-item ">
+<li data-bs-dismiss="offcanvas" className="nav-item ">
     <a className="nav-link text-xl font-serif" href="#">About</a>
   </li>
 </NavLink>
@@ -200,14 +200,14 @@ export const Nav = () => {
   
 
 <NavLink to={'/projects'}  className={`${location.pathname == '/projects' ? "text-danger" : ""} edit`} >
-<li className="nav-item">
+<li data-bs-dismiss="offcanvas" className="nav-item">
     <a className="nav-link text-xl font-serif" href="#">Projects</a>
   </li>
 </NavLink>
 
 
 <NavLink to={'/resume'}  className={`${location.pathname == '/resume' ? "text-danger" : ""} edit`} >
-<li className="nav-item">
+<li data-bs-dismiss="offcanvas" className="nav-item">
     <a className="nav-link text-xl font-serif" href="#">Resume</a>
   </li>
 </NavLink>
@@ -215,7 +215,7 @@ export const Nav = () => {
 
 
  <NavLink to={'/contact'}   className={`${location.pathname == '/contact' ? "text-danger" : ""} edit`}>
- <li className="nav-item">
+ <li data-bs-dismiss="offcanvas" className="nav-item">
     <a className="nav-link text-xl font-serif" href="#">Contact</a>
   </li>
  </NavLink>
